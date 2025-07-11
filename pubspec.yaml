@@ -1,9 +1,9 @@
 name: pubscale_offerwall_plugin
 description: "Flutter plugin project for supporting PubScale Offerwall."
 version: 0.0.1
-homepage: "https://github.com/greedyraagava/pubscale_offerwall_plugin_flutter"
-repository: "https://github.com/greedyraagava/pubscale_offerwall_plugin_flutter"
-issue_tracker: "https://github.com/greedyraagava/pubscale_offerwall_plugin_flutter/issues"
+homepage: "https://github.com/greedygame/pubscale_offerwall_plugin_flutter"
+repository: "https://github.com/greedygame/pubscale_offerwall_plugin_flutter"
+issue_tracker: "https://github.com/greedygame/pubscale_offerwall_plugin_flutter/issues"
 documentation: "https://pubscale.gitbook.io/offerwall-sdk/flutter/launch-the-offerwall"
 domain: "pubscale.com"
 
