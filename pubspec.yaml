@@ -1,6 +1,6 @@
 name: pubscale_offerwall_plugin
 description: "Flutter plugin project for supporting PubScale Offerwall."
-version: 1.0.11
+version: 0.0.1
 publish_to: "https://pub.dev"
 homepage: "https://github.com/greedyraagava/pubscale_offerwall_plugin_flutter"
 repository: "https://github.com/greedyraagava/pubscale_offerwall_plugin_flutter"
