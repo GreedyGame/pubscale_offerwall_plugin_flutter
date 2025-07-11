@@ -114,7 +114,7 @@ class PubscaleOfferwallPlugin : FlutterPlugin, MethodCallHandler, ActivityAware 
 
                     override fun onFailed(message: String) {
                         Log.d("PSOfferwall", "Offerwall launch failed")
-                        eventSink?.success(mapOf("event" to "offerwall_failed"))
+                        eventSink?.success(mapOf("event" to "offerwall_launch_failed"))
                         result.error(
                             "PS ERROR",
                             "Offerwall launch failed. Reason: $message",

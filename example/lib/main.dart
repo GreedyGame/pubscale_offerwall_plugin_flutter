@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
           case 'offerwall_reward':
             print('Reward: ${event['amount']} ${event['currency']}');
             break;
-          case 'offerwall_failed':
+          case 'offerwall_launch_failed':
             offerwallState = 'launch_error';
             offerwallStateText =
                 'Offerwall Launch Failed. \nError: ${event['error']}';
