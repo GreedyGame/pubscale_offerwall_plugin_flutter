@@ -136,9 +136,3 @@ Pubscale provides monetization solutions via SDKs and APIs to boost app revenues
 ## 📄 License
 
 MIT
-
----
-
-## 🧑‍💻 Contributing
-
-Contributions are welcome! Please open an issue or submit a PR on [GitHub](https://github.com/YOUR_USERNAME/pubscale_offerwall_plugin).
