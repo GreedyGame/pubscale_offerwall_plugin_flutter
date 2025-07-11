@@ -10,7 +10,7 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  pubscale_offerwall_plugin: ^0.0.1
+  pubscale_offerwall_plugin: ^0.0.3
 ```
 
 Then run:

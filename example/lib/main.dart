@@ -60,10 +60,10 @@ class _MyAppState extends State<MyApp> {
     });
 
     _pubscaleOfferwallPlugin.initializeOfferwall(
-      '59549523',
-      'UNIQUE_ID',
-      false,
-      false,
+      'YOUR_APP_ID', // Replace with your actual App ID
+      'UNIQUE_ID', // Replace with a unique ID for the user/device
+      false, // Set to true if you want to test in sandbox mode
+      false, // Set to true if you want to enable fullscreen mode
     );
 
     setState(() {

@@ -11,6 +11,12 @@ class PubscaleOfferwallPlugin {
     return PubscaleOfferwallPluginPlatform.instance.getPlatformVersion();
   }
 
+  /// Initializes the offerwall with the provided parameters.
+  /// /// [appKey] is the application key provided by Pubscale.
+  /// [uniqueId] is a unique identifier for the user or device.
+  /// [sandbox] indicates whether to run in sandbox mode (for testing).
+  /// [fullscreen] indicates whether to display the offerwall in fullscreen mode.
+  /// Success and failure events will be emitted through the `offerwallEvents` stream.
   Future<String?> initializeOfferwall(
     String appKey,
     String uniqueId,
@@ -25,6 +31,10 @@ class PubscaleOfferwallPlugin {
     );
   }
 
+  /// Launches the offerwall.
+  /// This method will trigger the offerwall to be displayed.
+  /// Success and failure events will be emitted through the `offerwallEvents` stream.
+  /// Make sure to call `initializeOfferwall` before calling this method.
   Future<void> launchOfferwall() {
     return PubscaleOfferwallPluginPlatform.instance.launchOfferwall();
   }
