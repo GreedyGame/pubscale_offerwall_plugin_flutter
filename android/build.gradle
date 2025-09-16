@@ -1,33 +1,20 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    // Must come last
+    // id("dev.flutter.flutter-gradle-plugin")
+}
+
 group = "com.example.pubscale_offerwall_plugin"
 version = "1.0-SNAPSHOT"
 
-buildscript {
-    ext.kotlin_version = "2.1.0"
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.7.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-apply plugin: "com.android.library"
-apply plugin: "kotlin-android"
-
 android {
     namespace = "com.example.pubscale_offerwall_plugin"
+    compileSdk = flutter.compileSdkVersion
 
-    compileSdk = 35
+    defaultConfig {
+        minSdk = flutter.minSdkVersion
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -35,37 +22,33 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     sourceSets {
-        main.java.srcDirs += "src/main/kotlin"
-        test.java.srcDirs += "src/test/kotlin"
-    }
-
-    defaultConfig {
-        minSdk = 21
-    }
-
-    dependencies {
-        testImplementation("org.jetbrains.kotlin:kotlin-test")
-        testImplementation("org.mockito:mockito-core:5.0.0")
-
-        compileOnly files("tempLibs/flutter.jar")
-
-        implementation("com.google.code.gson:gson:2.13.1")
-        implementation("com.pubscale.sdkone:offerwall:1.0.11")
+        getByName("main").java.srcDirs("src/main/kotlin")
+        getByName("test").java.srcDirs("src/test/kotlin")
     }
 
     testOptions {
         unitTests.all {
-            useJUnitPlatform()
-
-            testLogging {
-               events "passed", "skipped", "failed", "standardOut", "standardError"
-               outputs.upToDateWhen {false}
-               showStandardStreams = true
+            it.useJUnitPlatform()
+            it.testLogging {
+                events("passed", "skipped", "failed", "standardOut", "standardError")
+                outputs.upToDateWhen { false }
+                showStandardStreams = true
             }
         }
     }
+}
+
+dependencies {
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("org.mockito:mockito-core:5.0.0")
+
+    // ❌ REMOVE flutter.jar, Flutter Gradle plugin handles it
+    // compileOnly(files("tempLibs/flutter.jar"))
+
+    implementation("com.google.code.gson:gson:2.13.1")
+    implementation("com.pubscale.sdkone:offerwall:1.0.11")
 }

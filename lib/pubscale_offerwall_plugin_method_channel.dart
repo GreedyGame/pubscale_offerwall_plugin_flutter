@@ -28,10 +28,13 @@ class MethodChannelPubscaleOfferwallPlugin
     if (appKey.isEmpty) {
       throw ArgumentError('appKey cannot be empty');
     }
-    final result = await methodChannel.invokeMethod<String?>(
-      'initializeOfferwall',
-      {'app_key': appKey},
-    );
+    final result = await methodChannel
+        .invokeMethod<String?>('initializeOfferwall', {
+          'app_key': appKey,
+          'unique_id': uniqueId,
+          'sandbox': sandbox,
+          'fullscreen': fullscreen,
+        });
     return result;
   }
 
